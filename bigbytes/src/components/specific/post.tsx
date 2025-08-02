@@ -2,6 +2,7 @@
 
 import { FaArrowAltCircleUp, FaArrowAltCircleDown, FaCommentAlt, FaShareAlt } from 'react-icons/fa';
 import getPostPublishPeriod from "@/utils/generalCalculations";
+import type { Post } from "@/types";
 import clsx from "clsx";
 
 type SinglePostProps = {
@@ -9,26 +10,13 @@ type SinglePostProps = {
     tw?: string[];
     cs?: string[];
   }
-  postObj: {
-    id: number,
-    timeStamp: string,
-    publisher: string,
-    coauthor?: number,
-    title: string,
-    context: string,
-    votes: {
-      upv: number[],
-      dnv: number[]
-    },
-    comments?: object[],
-    thumbnail?: string,
-    sharable: boolean
-  };
+  postObj: Post;
   type?: string;
   layout?: string;
+  session_exists?: boolean
 }
 
-export default function SinglePost({ classList, postObj, type, layout }: SinglePostProps) {
+export default function SinglePost({ classList, postObj, type, layout, session_exists }: SinglePostProps) {
   const cls = clsx(classList?.tw, classList?.cs, (layout) ? `${layout}_item` : "detailed_item");
   const { id, timeStamp, publisher, coauthor, title, context, votes, comments, thumbnail, sharable } = postObj;
   const { upv, dnv } = votes;
@@ -49,7 +37,16 @@ export default function SinglePost({ classList, postObj, type, layout }: SingleP
     </div>
     <div className="post_body">
       <p className="context">{context}</p>
-
+      <div className="read more">
+        <button 
+          className="post_action"
+          onClick={() => null}
+        >
+          <span className="alt_text">
+            read more
+          </span>
+        </button>
+      </div>
     </div>
     <div className="post_footer">
       <div className="votes">
