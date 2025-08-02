@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ReduxProvider from "@/redux/provider";
 // import HeaderLogo from "@/images/HeaderLogo";
 // import FooterLogo from "@/images/FooterLogo";
 import Header from "@/components/general/Header";
@@ -26,26 +27,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header
-          classList={{
-            tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"]
-          }}
-          session={true /* session avaliablity checked here */}
-          logo={``/* HeaderLogo */}
-        />
-        {children}
-        <Footer 
-          classList={{
-            tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"]
-          }} 
-          year={new Date().getFullYear().toString()}
-          logo={``/* FooterLogo */}
-        />
+        <ReduxProvider>
+          <Header
+            classList={{
+              tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              cs: []
+            }}
+            logo={`/* HeaderLogo */`}
+          />
+          {children}
+          <Footer 
+            classList={{
+              tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              cs: []
+            }} 
+            year={new Date().getFullYear().toString()}
+            logo={`/* FooterLogo */`}
+          />
+        </ReduxProvider>
       </body>
     </html>
   );
