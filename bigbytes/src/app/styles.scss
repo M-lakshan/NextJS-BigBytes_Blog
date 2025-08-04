@@ -1,0 +1,27 @@
+@use "../styles/variables/colors" as *;
+@use "../styles/variables/fonts" as *;
+@use "../styles/variables/mq_stages" as *;
+@use "../styles/animations/keyframes" as *;
+@use "../styles/methods/mixins" as *;
+
+@use "../styles/common/header" as header;
+@use "../styles/containers/main" as main;
+@use "../styles/common/footer" as footer;
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  @include dp_block(block, 100%, 100%);
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}

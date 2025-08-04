@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import ReduxProvider from "@/redux/provider";
 // import HeaderLogo from "@/images/HeaderLogo";
 // import FooterLogo from "@/images/FooterLogo";
-import Header from "@/components/general/Header";
-import Footer from "@/components/general/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import "./globals.css";
+import "./styles.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        id="root"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
           <Header
             classList={{
-              tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              // tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              tw: [],
               cs: []
             }}
             logo={`/* HeaderLogo */`}
@@ -44,7 +47,8 @@ export default function RootLayout({
           {children}
           <Footer 
             classList={{
-              tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              // tw: ["row-start-3","flex","gap-[24px]","flex-wrap","items-center","justify-center"],
+              tw: [],
               cs: []
             }} 
             year={new Date().getFullYear().toString()}

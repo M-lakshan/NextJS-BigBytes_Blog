@@ -1,4 +1,4 @@
-"use client"; // Mark as client component if you want to use hooks or interactivity
+"use client";
 
 import Link from "next/link";
 

@@ -22,7 +22,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/cmp_e": ["./src/components/elements"],
-      "@/cmp_g": ["./src/components/general"],
+      "@/cmp_g": ["src/components/common"],
       "@/cmp_s": ["./src/components/specific"]
     }
   },
