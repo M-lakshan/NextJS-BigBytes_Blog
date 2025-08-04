@@ -1,0 +1,101 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+@use "../elements/elements" as *;
+
+%login {
+  @include dp_flex(column, center, center, 100%, 100%);
+  background: var(--prm_light_fade);
+  padding: 50px 25px;
+  min-height: max-content;
+  min-width: 100%;
+  
+  .container {
+    display: grid;
+    grid-template-columns: 15px 50px 1fr 50px 15px;
+    grid-template-rows: 12.5px 30px 1fr 10px 12.5px;
+    margin: 15px 2px;
+    background: var(--prm_light_alt);
+    border-radius: 8px;
+    max-width: $mq_i_breakpoint;
+    color: var(--prm_light_fade);
+    transform: translateY(-25%);
+
+    .title {
+      grid-column: 2/4;
+      grid-row: 2/3;
+      font-size: 24px;
+      font-family: $fm_lato;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--prm_light);
+      padding: 0px 0px 2px 2px;
+    }
+
+    .redirect {
+      @include dp_flex(row, center, flex-end, 100%, 100%);
+      grid-column: 3/5;
+      grid-row: 2/3;
+      font-size: 20px;
+      align-self: flex-end;
+      
+      span {
+        transition: 200ms ease-out;
+        display: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        
+        span {
+          display: inline-block;
+          transition: 200ms ease-in;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .login_form {
+      @include dp_flex(column, center, flex-end, 100%, 100%);
+      grid-column: 3/4;
+      grid-row: 3/4;
+      padding: 20px 10px 10px;
+
+      .text_input {
+        @include dp_block(block, 30px, 280px);
+        border-radius: 8px;
+        padding: 5px 10px;
+        margin: 5px 10px;
+      }
+
+      .form_actions {
+        @include dp_flex(row, center, flex-end, 100%, 100%);
+        padding: 10px;
+        margin: 10px 5px 0px;
+        transform: translateX(50px);
+
+        .btn_reg {
+          @extend %tertiary_btn;
+          background: var(--prm_mid_alt);
+          color: var(--prm_light);
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          padding-right: 25px;
+          transform: translateX(15px);
+          z-index: 2;
+          position: relative;
+        }
+
+        .btn_login {
+          @extend %primary_btn;
+          background: var(--prm_light);
+          color: var(--prm_dark_alt);
+          border-radius: 30px;
+          position: relative;
+          z-index: 3;
+        }
+      }
+    }
+  }
+}
