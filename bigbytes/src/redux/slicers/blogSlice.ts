@@ -70,7 +70,7 @@ const sampleComments = [
 const samplePosts = [
   {
     id: 1,
-    timeStamp: "2025-07-30T09:00:00.000Z",
+    timeStamp: new Date(new Date().getTime() - 20 * 1000).toISOString(),
     publisher: 1,
     coauthor: 2,
     title: "The Future of Web Development",
@@ -100,7 +100,7 @@ const samplePosts = [
   },
   {
     id: 3,
-    timeStamp: "2025-07-30T09:45:00.000Z",
+    timeStamp: "2025-05-13T09:45:00.000Z",
     publisher: 4,
     coauthor: null,
     title: "My Productivity Stack for 2025",
@@ -115,7 +115,7 @@ const samplePosts = [
   },
   {
     id: 4,
-    timeStamp: "2025-07-30T10:00:00.000Z",
+    timeStamp: "2025-01-31T10:00:00.000Z",
     publisher: 2,
     coauthor: 5,
     title: "A Beginner’s Guide to TypeScript",
@@ -130,7 +130,7 @@ const samplePosts = [
   },
   {
     id: 5,
-    timeStamp: "2025-07-30T10:10:00.000Z",
+    timeStamp: "2024-05-30T10:10:00.000Z",
     publisher: 5,
     coauthor: null,
     title: "Is AI Killing Creativity?",
