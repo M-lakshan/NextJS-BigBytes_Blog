@@ -1,0 +1,52 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+
+@use "../specific/post" as post;
+
+%feed {
+
+  .blog_posts {
+    @include dp_block(inline-block, auto, auto);
+
+    .list_item {
+      @extend %post;
+    }
+  }
+
+  @media screen and (max-width: $mq_ii_breakpoint) {
+    
+    .blog_posts {
+
+      .list_item > .post_header {
+
+        .period {
+          max-width: 60px !important;
+          justify-self: flex-end;
+        }
+
+        .publication, .publishers {
+
+          &.many {
+            min-height: 56px;
+            max-width: 54px;
+
+            svg:first-child {
+              z-index: 1 !important;
+            }
+
+            svg:nth-last-child(2) {
+              transform: translate(8px, -15px) !important;
+              font-size: 22px !important;
+            }
+            
+            svg:last-child {
+              transform: translateX(3px);
+              z-index: 3 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
