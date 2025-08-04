@@ -1,0 +1,34 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+
+%action_btn {
+  @include dp_block(inline-block,40px,max-content);
+  padding: 10px 15px;
+  font-size: 52px;
+  transition: 200ms ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transition: 200ms ease-in;
+  }
+}
+
+%primary_btn {
+  @extend %action_btn;
+  font-size: 28px;
+  height: 52px;
+  padding: 5px 20px 8px 20px;
+}
+
+%secondary_btn {
+  @extend %action_btn;
+  font-size: 24px;
+  height: 36px;
+}
+
+%tertiary_btn {
+  @extend %action_btn;
+  font-size: 20px;
+  height: 38px;
+  padding: 3px 15px 8px 15px;
+}

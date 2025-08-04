@@ -1,0 +1,44 @@
+@mixin glow($period: 1s, $delay: 0s, $color1, $color2: $color1) {
+  animation: glow-#{unique-id()} $period $delay ease-in-out infinite;
+
+  @keyframes glow-#{unique-id()} {
+    0% {
+      text-shadow: 0 0 5px #{$color1},
+      0 0 10px #{$color1},
+      0 0 20px #{$color1};
+    }
+    50% {
+      text-shadow: 0 0 10px #{$color2},
+      0 0 20px #{$color2},
+      0 0 40px #{$color2};
+    }
+    100% {
+      text-shadow: 0 0 5px #{$color1},
+      0 0 10px #{$color1},
+      0 0 20px #{$color1};
+    }
+  }
+}
+
+@mixin shivel($period: 1s, $delay: 0s, $rotation, $from_top, $from_left, $to_top, $to_left) {
+  position: absolute;
+  animation: shivel-move $period $delay ease-in-out infinite alternate;
+  
+  @keyframes shivel-move {
+    from {
+      transform: rotate($rotation) translate($from_top, $from_left);
+    }
+    to {
+      transform: rotate($rotation) translate($to_top, $to_left);
+    }
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 60%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

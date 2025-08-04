@@ -1,0 +1,60 @@
+@mixin dp_block($mode: inline-block, $h: max-content, $w: max-content) {
+  display: $mode;
+  height: $h;
+  width: $w;
+}
+
+@mixin dp_flex($dir, $cont_align, $cont_justify, $h, $w) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $cont_align;
+  justify-content: $cont_justify;
+  height: $h;
+  width: $w;
+}
+
+@mixin scroll_to_side($side, $depth, $name) {
+  @if $side =='left' {
+    @keyframes #{$name} {
+      from {
+        transform: translateX(0%);
+      }
+
+      to {
+        transform: translateX(-#{$depth});
+      }
+    }
+  }
+
+  @else if $side =='right' {
+    @keyframes #{$name} {
+      from {
+        transform: translateX(0%);
+      }
+
+      to {
+        transform: translateX(#{$depth});
+      }
+    }
+  }
+}
+
+@mixin pad_n_marg($pad, $marg) {
+  padding: $pad;
+  margin: $marg;
+}
+
+@mixin box_shadow($x, $y, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $x $y $blur $spread $color;
+    -moz-box-shadow: inset $x $y $blur $spread $color;
+    -ms-box-shadow: inset $x $y $blur $spread $color;
+    box-shadow: inset $x $y $blur $spread $color;
+  }
+  @else {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    -ms-box-shadow: $x $y $blur $spread $color;
+    box-shadow: $x $y $blur $spread $color;
+  }
+}

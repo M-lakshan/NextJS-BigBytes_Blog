@@ -1,0 +1,61 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+
+@use "../containers/page_about" as about;
+@use "../containers/page_account" as account;
+@use "../containers/page_browse" as browse;
+@use "../containers/page_contact" as contact;
+@use "../containers/page_feed" as feed;
+@use "../containers/page_home" as home;
+@use "../containers/page_login" as login;
+
+main {
+  @include dp_flex(column, center, flex-start, 100%, 100%);
+  background: var(--background);
+  padding: 50px 25px;
+  min-height: max-content;
+  min-width: 100%;
+  overflow-y: scroll;
+
+  &.under_development, .empty_context {
+    @include dp_flex(column, center, center, 50%, 100%);
+    overflow: hidden;
+
+    h1 {
+      @include dp_block(block, max-content, 100%);
+      text-align: center;
+      margin: 10px 5px;
+    }
+
+    p {
+      @include dp_block();
+      max-width: 75%;
+      text-indent: 100px;
+      padding: 5px;
+      font-family: $fm_mnspc;
+      color: var(--prm_light_alt);
+    }
+
+    .action_btn{
+      @extend %tertiary_btn;
+      background: var(--prm_mid_alt);
+      color: var(--prm_light);
+      border-radius: 20px;
+      transform: translateX(15px);
+      z-index: 2;
+      font-size: 18px;
+      padding: 5px 15px;
+      position: relative;
+      margin-top: 50px;
+    }
+  }
+}
+
+main#about { @extend %about; }
+// main#account { @extend %account; }
+// main#browse { @extend %browse; }
+// main#contact { @extend %contact; }
+main#feed { @extend %feed; }
+main#home { @extend %home; }
+main#login { @extend %login; }

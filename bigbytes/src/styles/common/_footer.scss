@@ -1,0 +1,38 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+
+footer {
+  @include dp_flex(column, center, center, max-content, 100%);
+  background: var(--prm_light);
+  padding: 10px;
+  position: sticky;
+  top: 100%;
+  z-index: 5;
+
+  &.overlay {
+    @include box_shadow(0px, -15px, 20px, 5px, var(--background));
+  }
+
+  .logo_f {
+    @include dp_flex(row, center, center, 28px, 180px);
+    background: var(--prm_mid);
+    font-family: $fm_mnspc;
+    color: var(--background);
+    margin: 10px;
+  }
+
+  .copyright {
+    font-family: $fm_lato;
+    font-size: 12px;
+    color: var(--prm_mid);
+    font-weight: 300;
+    opacity: 80%;
+  }
+
+  @media screen and (min-width: $mq_i_breakpoint) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-left: 20px;
+  }
+}
