@@ -1,0 +1,50 @@
+@use "../methods/mixins" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+
+%about {
+  @include dp_flex(column, flex-start, flex-start, 100%, 100%);
+  background: var(--prm_light_fade);
+  padding: 30px 25px;
+  min-height: max-content;
+  min-width: 100%;
+
+  section {
+    @include dp_flex(column, flex-start, center, max-content, 100%);
+    margin: 10px 5px;
+
+    h1, h2 {
+      color: var(--prm_mid);
+      font-family: $fm_asap;
+    }
+
+    .context, ul {
+      color: var(--prm_mid_alt);
+      padding: 10px 20px;
+      text-indent: 30px;
+    }
+
+    ul {
+      transform: translate(15%);
+    }
+
+    .socials {
+      @include dp_flex(row, flex-start, center, max-content, 100%);
+      padding: 2.5% 0%;
+      
+      .social_link {
+        font-size: 40px;
+        margin: 5px 10px;
+        color: var(--prm_light_alt);
+        transition: 200ms ease-out;
+
+        &:hover {
+          cursor: pointer;
+          transition: 200ms ease-in;
+          color: var(--prm_mid);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
