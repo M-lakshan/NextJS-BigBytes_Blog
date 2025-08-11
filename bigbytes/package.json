@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch:leadcms": "node ./scripts/fetch-leadcms-content.mjs",
+    "watch:leadcms": "node ./scripts/sse-watcher.mjs"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
