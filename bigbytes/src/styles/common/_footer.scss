@@ -11,14 +11,14 @@ footer {
   z-index: 5;
 
   &.overlay {
-    @include box_shadow(0px, -15px, 20px, 5px, var(--background));
+    @include box_shadow(0px, -15px, 20px, 5px, var(--prm_light_fade_alt));
   }
 
   .logo_f {
     @include dp_flex(row, center, center, 28px, 180px);
     background: var(--prm_mid);
     font-family: $fm_mnspc;
-    color: var(--background);
+    color: var(--prm_light_fade_alt);
     margin: 10px;
   }
 

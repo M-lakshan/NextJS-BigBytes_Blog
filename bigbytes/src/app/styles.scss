@@ -20,6 +20,7 @@ body,
   position: relative;
   @include dp_block(block, 100%, 100%);
   min-height: 100%;
+  background: var(--prm_light_fade_alt);
 }
 
 body {

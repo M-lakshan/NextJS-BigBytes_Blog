@@ -13,14 +13,14 @@ header {
   z-index: 5;
 
   &.overlay {
-    @include box_shadow(10px, 15px, 20px, 5px, var(--background));
+    @include box_shadow(10px, 15px, 20px, 5px, var(--prm_light_fade_alt));
   }
 
   .logo_h {
     @include dp_flex(row, center, center, 28px, 180px);
     background: var(--prm_mid);
     font-family: $fm_mnspc;
-    color: var(--background);
+    color: var(--prm_light_fade_alt);
   }
   
   .nav_container {

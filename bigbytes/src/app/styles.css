@@ -45,8 +45,8 @@ header {
   z-index: 5;
 }
 header.overlay {
-  -ms-box-shadow: 10px 15px 20px 5px var(--background);
-  box-shadow: 10px 15px 20px 5px var(--background);
+  -ms-box-shadow: 10px 15px 20px 5px var(--prm_light_fade_alt);
+  box-shadow: 10px 15px 20px 5px var(--prm_light_fade_alt);
 }
 header .logo_h {
   display: flex;
@@ -57,7 +57,7 @@ header .logo_h {
   width: 180px;
   background: var(--prm_mid);
   font-family: monospace;
-  color: var(--background);
+  color: var(--prm_light_fade_alt);
 }
 header .nav_container {
   display: flex;
@@ -621,9 +621,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-uglk8z7 2s 0s ease-in-out infinite;
+  animation: glow-ux2yzpn 2s 0s ease-in-out infinite;
 }
-@keyframes glow-uglk8zt {
+@keyframes glow-ux2yzqb {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -635,9 +635,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-uglk90t 1.5s 0s ease-in-out infinite;
+  animation: glow-ux2yzqd 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-uglk91a {
+@keyframes glow-ux2yzr8 {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -671,7 +671,7 @@ main#home article.page section.cta .context {
   }
 }
 
-main.under_development .action_btn, main .empty_context .action_btn, main#login .container .login_form .form_actions .btn_reg, main#login .container .login_form .form_actions .btn_login {
+main.under_development .action_btn, main.empty_context .action_btn, main#not_found .action_btn, main#login .container .login_form .form_actions .btn_reg, main#login .container .login_form .form_actions .btn_login {
   display: inline-block;
   height: 40px;
   width: -moz-max-content;
@@ -680,7 +680,7 @@ main.under_development .action_btn, main .empty_context .action_btn, main#login 
   font-size: 52px;
   transition: 200ms ease-out;
 }
-main.under_development .action_btn:hover, main .empty_context .action_btn:hover, main#login .container .login_form .form_actions .btn_reg:hover, main#login .container .login_form .form_actions .btn_login:hover {
+main.under_development .action_btn:hover, main.empty_context .action_btn:hover, main#not_found .action_btn:hover, main#login .container .login_form .form_actions .btn_reg:hover, main#login .container .login_form .form_actions .btn_login:hover {
   cursor: pointer;
   transition: 200ms ease-in;
 }
@@ -691,7 +691,7 @@ main#login .container .login_form .form_actions .btn_login {
   padding: 5px 20px 8px 20px;
 }
 
-main.under_development .action_btn, main .empty_context .action_btn, main#login .container .login_form .form_actions .btn_reg {
+main.under_development .action_btn, main.empty_context .action_btn, main#not_found .action_btn, main#login .container .login_form .form_actions .btn_reg {
   font-size: 20px;
   height: 38px;
   padding: 3px 15px 8px 15px;
@@ -811,14 +811,14 @@ main {
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  background: var(--background);
+  background: var(--prm_light_fade_alt);
   padding: 50px 25px;
   min-height: -moz-max-content;
   min-height: max-content;
   min-width: 100%;
   overflow-y: scroll;
 }
-main.under_development, main .empty_context {
+main.under_development, main.empty_context, main#not_found {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -827,7 +827,7 @@ main.under_development, main .empty_context {
   width: 100%;
   overflow: hidden;
 }
-main.under_development h1, main .empty_context h1 {
+main.under_development h1, main.empty_context h1, main#not_found h1 {
   display: block;
   height: -moz-max-content;
   height: max-content;
@@ -835,19 +835,18 @@ main.under_development h1, main .empty_context h1 {
   text-align: center;
   margin: 10px 5px;
 }
-main.under_development p, main .empty_context p {
+main.under_development p, main.empty_context p, main#not_found p {
   display: inline-block;
   height: -moz-max-content;
   height: max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 75%;
-  text-indent: 100px;
   padding: 5px;
   font-family: monospace;
   color: var(--prm_light_alt);
 }
-main.under_development .action_btn, main .empty_context .action_btn {
+main.under_development .action_btn, main.empty_context .action_btn, main#not_found .action_btn {
   background: var(--prm_mid_alt);
   color: var(--prm_light);
   border-radius: 20px;
@@ -874,8 +873,8 @@ footer {
   z-index: 5;
 }
 footer.overlay {
-  -ms-box-shadow: 0px -15px 20px 5px var(--background);
-  box-shadow: 0px -15px 20px 5px var(--background);
+  -ms-box-shadow: 0px -15px 20px 5px var(--prm_light_fade_alt);
+  box-shadow: 0px -15px 20px 5px var(--prm_light_fade_alt);
 }
 footer .logo_f {
   display: flex;
@@ -886,7 +885,7 @@ footer .logo_f {
   width: 180px;
   background: var(--prm_mid);
   font-family: monospace;
-  color: var(--background);
+  color: var(--prm_light_fade_alt);
   margin: 10px;
 }
 footer .copyright {
@@ -918,6 +917,7 @@ body,
   height: 100%;
   width: 100%;
   min-height: 100%;
+  background: var(--prm_light_fade_alt);
 }
 
 body {
