@@ -393,7 +393,7 @@ main#feed .blog_posts .list_item .post_body .read_more .post_action {
   background: var(--prm_mid);
   padding: 5px 15px;
   border-radius: 30px;
-  color: var(--background);
+  color: var(--prm_light_fade);
   z-index: 3;
   transform: translateY(-35px);
   border: 2px solid var(--prm_light_fade_alt);
@@ -621,9 +621,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-ux2yzpn 2s 0s ease-in-out infinite;
+  animation: glow-ux2yztp 2s 0s ease-in-out infinite;
 }
-@keyframes glow-ux2yzqb {
+@keyframes glow-ux2yzuf {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -635,9 +635,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-ux2yzqd 1.5s 0s ease-in-out infinite;
+  animation: glow-ux2yzv8 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-ux2yzr8 {
+@keyframes glow-ux2yzvj {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
