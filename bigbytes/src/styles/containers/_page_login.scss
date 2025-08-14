@@ -81,10 +81,15 @@
           color: var(--prm_light);
           border-top-left-radius: 20px;
           border-bottom-left-radius: 20px;
-          padding-right: 25px;
+          padding-right: 24px;
           transform: translateX(15px);
           z-index: 2;
           position: relative;
+
+          &:hover {
+            background: var(--white);
+            color: var(--prm_mid_alt);
+          }
         }
 
         .btn_login {
@@ -94,6 +99,13 @@
           border-radius: 30px;
           position: relative;
           z-index: 3;
+
+          &:hover {
+            background: var(--sec_light);
+            color: var(--prm_mid_alt);
+            transform: scale(1.1);
+            margin-left: 5px;
+          }
         }
       }
     }
