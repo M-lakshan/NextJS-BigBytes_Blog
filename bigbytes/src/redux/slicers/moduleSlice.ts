@@ -17,7 +17,7 @@ const initialState: DevFlags = {
   pages: {
     about: false,
     account: true,
-    browse: true,
+    browse: false,
     contact: true,
     feed: false,
     login: false,
