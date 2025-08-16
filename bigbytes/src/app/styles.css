@@ -622,9 +622,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-ux2z2ma 2s 0s ease-in-out infinite;
+  animation: glow-uyvx8mw 2s 0s ease-in-out infinite;
 }
-@keyframes glow-ux2z2n4 {
+@keyframes glow-uyvx8nv {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -636,9 +636,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-ux2z2nn 1.5s 0s ease-in-out infinite;
+  animation: glow-uyvx8og 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-ux2z2ns {
+@keyframes glow-uyvx8pd {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
