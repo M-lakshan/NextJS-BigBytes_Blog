@@ -1,6 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
+import { serialize } from 'next-mdx-remote-client/serialize';
 import { CMSContent, PostAlt } from "@/types"
 
 export async function getCMSContentBySlug(
@@ -11,12 +12,15 @@ export async function getCMSContentBySlug(
   // Try both .mdx and .json extensions
   const mdxPath = path.join(contentDir, `${slug}.mdx`)
   const jsonPath = path.join(contentDir, `${slug}.json`)
-  
+  console.log("### ",contentDir,slug);
   try {
     // Try MDX first - combine existence check with read operation
     try {
       const file = await fs.readFile(mdxPath, "utf8")
       const { data, content } = matter(file)
+
+      // const mdxSource = await serialize(content)
+
       return {
         ...data,
         slug,
@@ -51,5 +55,19 @@ export async function getCMSContentBySlug(
     }
   } catch (e) {
     return null
+  }
+}
+
+export async function getAllCMSFileSlugs(): Promise<string[]> {
+  const contentPath = path.join(process.cwd(), ".leadcms", "content");
+
+  try {
+    const files = await fs.readdir(contentPath);
+    return files
+      .filter((file) => file.endsWith(".json") || file.endsWith(".mdx"))
+      .map((file) => file.replace(/\.(json|mdx)$/, ""));
+  } catch (error) {
+    console.error("Failed to read CMS content directory:", error);
+    return [];
   }
 }
