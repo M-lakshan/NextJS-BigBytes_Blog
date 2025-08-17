@@ -141,6 +141,9 @@ type SinglePostAltProps = {
 
 export function SinglePostAlt({ classList, postObj, format, layout, publisher_alt, coauthor_alt, session_exists }: SinglePostAltProps) {
   const cls = clsx(classList?.tw, classList?.cs, (layout) ? `${layout}_item` : "detailed_item");
+  
+  if (!postObj) return null;
+  
   const { id, createdAt, updatedAt, publishedAt, comments, title, description, coverImageUrl, coverImageAlt, slug, type, author, language, category, tags, allowComments, source } = postObj;
   // const { id, timeStamp, publisher, coauthor, title, context, votes, comments, thumbnail, sharable } = postObj;
   // const { upv, dnv } = votes;
@@ -226,7 +229,7 @@ export function SinglePostAlt({ classList, postObj, format, layout, publisher_al
         <button 
           className="post_action"
           onClick={() => null}
-          >
+        >
           <p>
             <span className="alt_text">
               <FaCommentAlt className="act_icon"/>
