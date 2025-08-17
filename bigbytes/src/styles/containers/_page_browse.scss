@@ -1,0 +1,43 @@
+@use "../methods/mixins" as *;
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/mq_stages" as *;
+
+%browse {
+  @include dp_block(block, max-content, 100%);
+
+  ul.topics {
+    // @include dp_block(block, max-content, 100%);
+    padding: 5px 25px;
+
+    li.topic_container > .topic {
+      @include dp_flex(row, center, center, max-content, max-content);
+      padding: 3px 8px;
+      font-family: $fm_lato;
+      font-size: 15px;
+      color: var(--prm_mid);
+      letter-spacing: 1.5px;
+      transition: 200ms ease-out;
+      
+      .selection {
+        transform: rotate(45deg);
+        margin-right: 10px;
+        margin-left: -10px;
+        opacity: 0%;
+        transition: 200ms ease-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        font-size: 16px;
+        transition: 200ms ease-in;
+
+        .selection {
+          margin-left: 0px;
+          opacity: 100%;
+          transition: 200ms ease-in;
+        }
+      }
+    }
+  }
+}

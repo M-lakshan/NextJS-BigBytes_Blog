@@ -10,6 +10,21 @@
 @use "../containers/page_home" as home;
 @use "../containers/page_login" as login;
 
+h5.progression {
+  @include dp_flex(row, center, center, max-content, 100%);
+  padding: 25px 15px;
+  text-align: center;
+  color: var(--prm_mid_alt);
+
+  .state_icon {
+    animation: rotate 2.5s ease 0s infinite forwards;
+  }
+
+  em {
+    padding-left: 5px;
+  }
+}
+
 main {
   @include dp_flex(column, center, flex-start, 100%, 100%);
   background: var(--prm_light_fade_alt);
@@ -18,7 +33,28 @@ main {
   min-width: 100%;
   overflow-y: scroll;
 
-  &.under_development, &.empty_context, &#not_found  {
+  .sub_title {
+    @include dp_flex(row, center, flex-start, max-content, 100%);
+    padding: 5px 15px;
+
+    .context {
+      @include dp_block(block, max-content, max-content !important);
+      min-width: max-content !important;
+      font-family: $fm_mzl_hdl;
+      font-weight: 600;
+      color: var(--prm_light_alt);
+      text-transform: uppercase;
+    }
+
+    .expander {
+      @include dp_block(block, max-content, 99% !important);
+      border-bottom:1px solid var(--prm_light);
+      margin-left: 1%;
+      transform: translateY(-5px);
+    }
+  }
+
+  &.under_development, &.empty_context, &#not_found {
     @include dp_flex(column, center, center, 50%, 100%);
     overflow: hidden;
 
@@ -35,6 +71,7 @@ main {
       padding: 5px;
       font-family: $fm_mnspc;
       color: var(--prm_light_alt);
+
     }
 
     .action_btn{
@@ -54,7 +91,7 @@ main {
 
 main#about { @extend %about; }
 // main#account { @extend %account; }
-// main#browse { @extend %browse; }
+main#browse { @extend %browse; }
 // main#contact { @extend %contact; }
 main#feed { @extend %feed; }
 main#home { @extend %home; }
