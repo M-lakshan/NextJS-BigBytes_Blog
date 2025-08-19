@@ -12,10 +12,7 @@ export async function GET(
   }
 
   const CMS_CONTENT_PATH = path.join(process.cwd(), ".leadcms", "content");
-  // const CMS_CONTENT_PATH = path.join(process.cwd(), "content/cms");
   const slug = params.slug.join("/");
-
-  console.log("##### "+CMS_CONTENT_PATH);
 
   const data = await getCMSContentBySlug(slug, CMS_CONTENT_PATH);
 
