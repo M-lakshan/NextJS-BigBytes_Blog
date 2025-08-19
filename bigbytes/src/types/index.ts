@@ -41,14 +41,18 @@ export type PostAlt = {
   source?: string,
   publishedAt: string
 }
+
 export interface CMSContent {
   id: string | number
   slug: string
   type: string
   title?: string
+  tags?: string[]
+  comments?: Comment[],
   description?: string
   coverImageUrl?: string
   coverImageAlt?: string
+  allowComments: boolean,
   [key: string]: any
   body: string
 }
@@ -64,3 +68,8 @@ export type VotePayload = {
   userId: number;
   type: "upv" | "dnv";
 };
+
+export type SubNavNode = {
+  nav_for: string,
+  nav_url: string
+}
