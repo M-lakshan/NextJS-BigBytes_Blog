@@ -1,5 +1,7 @@
 import SpecificPost from "./specificPost";
 import PostTemplate from "@/components/specific/slugPostFix";
+import ReactMarkdown from 'react-markdown';
+import { SinglePostAlt } from "@/components/specific/post";
 import NotFound from "@/app/not-found";
 import { getCMSContentBySlug } from "@/lib/cms";
 import path from "path";
@@ -25,5 +27,21 @@ export default async function Page({ params }: PageProps) {
     redirect="browse"
   />
 
-  return <PostTemplate content={content} />
+  // return <PostTemplate content={content} />
+
+    return (
+    <main id="browse" className={''}>
+      <div className="single_post">
+        <SinglePostAlt
+          classList={{ tw: [], cs: [] }}
+          publisher_alt={null}
+          coauthor_alt={null}
+          postObj={content}
+          format="feed"
+          layout="single"
+          session_exists={false}
+        />
+      </div>
+    </main>
+  );
 }
