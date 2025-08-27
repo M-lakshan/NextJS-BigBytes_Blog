@@ -93,6 +93,31 @@
           color: var(--white);
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;
+          
+          &.body_context {
+            @include box_shadow(0px, -150px, 50px, 5px, var(--prm_dark), true);
+            text-indent: 0%;
+
+            h1,h2,h3,h4,h5 {
+              font-weight: 600;
+            }
+
+            h3,h4,h5 {
+              text-indent: 10px;
+            }
+
+            p {
+              text-indent: 20px;
+              margin-bottom: 5px;
+            }
+
+            ol, ul {
+              display: block;
+              text-decoration: dotted;
+              list-style: circle;
+              padding-left: 50px;
+            }
+          }
         }
 
         .comments {

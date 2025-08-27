@@ -598,6 +598,28 @@ main#browse .single_post .single_item .post_body .context {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+main#browse .single_post .single_item .post_body .context.body_context {
+  -ms-box-shadow: inset 0px -150px 50px 5px var(--prm_dark);
+  box-shadow: inset 0px -150px 50px 5px var(--prm_dark);
+  text-indent: 0%;
+}
+main#browse .single_post .single_item .post_body .context.body_context h1, main#browse .single_post .single_item .post_body .context.body_context h2, main#browse .single_post .single_item .post_body .context.body_context h3, main#browse .single_post .single_item .post_body .context.body_context h4, main#browse .single_post .single_item .post_body .context.body_context h5 {
+  font-weight: 600;
+}
+main#browse .single_post .single_item .post_body .context.body_context h3, main#browse .single_post .single_item .post_body .context.body_context h4, main#browse .single_post .single_item .post_body .context.body_context h5 {
+  text-indent: 10px;
+}
+main#browse .single_post .single_item .post_body .context.body_context p {
+  text-indent: 20px;
+  margin-bottom: 5px;
+}
+main#browse .single_post .single_item .post_body .context.body_context ol, main#browse .single_post .single_item .post_body .context.body_context ul {
+  display: block;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  list-style: circle;
+  padding-left: 50px;
+}
 main#browse .single_post .single_item .post_body .comments {
   padding: 10px 12px 2px;
 }
@@ -835,9 +857,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-uttpjfa 2s 0s ease-in-out infinite;
+  animation: glow-ucoqtwz 2s 0s ease-in-out infinite;
 }
-@keyframes glow-uttpjfz {
+@keyframes glow-ucoqtx8 {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -849,9 +871,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-uttpjg2 1.5s 0s ease-in-out infinite;
+  animation: glow-ucoqtxj 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-uttpjgl {
+@keyframes glow-ucoqtye {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
