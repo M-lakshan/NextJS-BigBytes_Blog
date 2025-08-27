@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import getPostPublishPeriod from "@/utils/generalCalculations";
 import type { CMSContent, Post, User } from "@/types";
+import MarkdownRenderer from '../elements/markdownStack';
 import CommentContainer from './comment';
 import clsx from "clsx";
 
@@ -145,7 +146,7 @@ export function SinglePostAlt({ classList, postObj, format, layout, publisher_al
   
   if (!postObj) return null;
   
-  const { id, createdAt, updatedAt, publishedAt, comments, title, description, coverImageUrl, coverImageAlt, slug, type, author, language, category, tags, allowComments, source } = postObj;
+  const { id, createdAt, updatedAt, publishedAt, comments, title, body, description, coverImageUrl, coverImageAlt, slug, type, author, language, category, tags, allowComments, source } = postObj;
   const published_period = getPostPublishPeriod(publishedAt);
   
   // const { id, timeStamp, publisher, coauthor, title, context, votes, comments, thumbnail, sharable } = postObj;
@@ -184,7 +185,7 @@ export function SinglePostAlt({ classList, postObj, format, layout, publisher_al
       </div>
     </div>
     <div className="post_body">
-      <p className="context">{description}</p>
+      {(body) ? <MarkdownRenderer content={body} /> : <p className="context">{description}</p>}
       <div className="comments">
         {(comments && comments?.length > 0) ? comments?.map((cmt,idx) => {
           const cmt_period = getPostPublishPeriod(cmt.timeStamp);
