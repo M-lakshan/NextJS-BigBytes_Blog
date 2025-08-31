@@ -15,7 +15,7 @@ type SpecificPostProps = {
   slugs?: { slug: string[] }
 };
 
-export default function SpecificPost({ classList, slugs }: SpecificPostProps) {
+export default async function SpecificPost({ classList, slugs }: SpecificPostProps) {
   const cls = clsx(classList?.tw, classList?.cs);
   const [postData, setPostData] = useState<any>(null);
   const [loading, setLoading] = useState(true);

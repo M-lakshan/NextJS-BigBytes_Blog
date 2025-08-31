@@ -12,7 +12,7 @@ export async function getCMSContentBySlug(
   // Try both .mdx and .json extensions
   const mdxPath = path.join(contentDir, `${slug}.mdx`)
   const jsonPath = path.join(contentDir, `${slug}.json`)
-  console.log(`### ${contentDir} ${slug}`);
+
   try {
     // Try MDX first - combine existence check with read operation
     try {

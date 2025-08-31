@@ -33,7 +33,6 @@ export default function CommentContainer({ post_id, allowed, display_only, defin
     setComment('');
     setName('');
   };
-  console.log((display_only && defined_comment),allowed);
 
   if(display_only && defined_comment) {
     let cmt = JSON.parse(defined_comment);
