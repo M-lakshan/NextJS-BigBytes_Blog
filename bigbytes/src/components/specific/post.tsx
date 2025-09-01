@@ -20,10 +20,11 @@ type SinglePostProps = {
   postObj: Post;
   type?: string;
   layout?: string;
-  session_exists?: boolean
+  session_exists?: boolean;
+  dynamic_posts?: boolean;
 }
 
-export function SinglePost({ classList, postObj, type, layout, publisher_alt, coauthor_alt, session_exists }: SinglePostProps) {
+export function SinglePost({ classList, postObj, type, layout, publisher_alt, coauthor_alt, session_exists, dynamic_posts }: SinglePostProps) {
   const cls = clsx(classList?.tw, classList?.cs, (layout) ? `${layout}_item` : "detailed_item");
   const { id, timeStamp, publisher, coauthor, title, context, votes, comments, thumbnail, sharable } = postObj;
   const { upv, dnv } = votes;
