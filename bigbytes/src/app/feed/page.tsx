@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/redux/store/store";
-import SinglePost from "@/components/specific/post";
+import { SinglePost } from "@/components/specific/post";
 import Development from "@/app/under-dev";
-
 import clsx from "clsx";
 
 type FeedProps = {
@@ -21,13 +20,12 @@ export default function Feed({ classList }: FeedProps) {
   const blog = useSelector((state: RootState) => state.blog);
   const underDevelopment = useSelector((state: RootState) => state.development?.pages?.feed);
   const [pageLayout, setPageLayout] = useState("list");
-    
 
   if(underDevelopment) return <Development />
 
   return <main id="feed" className={cls}>
     {(blog?.posts.length >= 1 && blog?.publishers.length >= 1) ? <div className="blog_posts">
-      {blog.posts.map((eachBP,idx) => (blog.publishers.map(pbl => pbl.id  ).includes(eachBP.publisher)) ? <SinglePost
+      {blog.posts.map((eachBP,idx) => (blog.publishers.map(pbl => pbl.id).includes(eachBP.publisher)) ? <SinglePost
         key={`bp_${idx+1}_${eachBP.id}`}
         classList={{
           tw: [],
