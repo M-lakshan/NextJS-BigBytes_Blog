@@ -127,6 +127,7 @@ export async function downloadMediaFile(
   }
 }
 
+// omiting body ?? why?
 export function buildFrontmatter(content) {
   const omit = ["body"];
   const fm = Object.fromEntries(
@@ -167,20 +168,23 @@ export async function saveContentFile({
     console.warn("[LeadCMS] Skipping content with missing slug:", content);
     return;
   }
+
   const contentType = typeMap
     ? typeMap[content.type]
     : content.format || (content.body ? "MDX" : "JSON");
   const cleanedContent = replaceApiMediaPaths(content);
 
-  if (contentType === "MDX") {
+  if (contentType === "MDX" || contentType == "MD") {
     const filePath = path.join(contentDir, `${slug}.mdx`);
     const frontmatter = buildFrontmatter(cleanedContent);
     const mdx = `${frontmatter}\n\n${(cleanedContent.body || "").replace(
       /\/api\/media\//g,
       "/media/"
     )}\n`;
+
     await fs.mkdir(path.dirname(filePath), { recursive: true });
     await fs.writeFile(filePath, mdx, "utf8");
+    
     return filePath;
   } else {
     let bodyObj = {};
