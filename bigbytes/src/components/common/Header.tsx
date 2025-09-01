@@ -20,6 +20,8 @@ type HeaderProps = {
 export default function Header({ classList, logo, slug }: HeaderProps) {
   const cls = clsx(classList?.tw, classList?.cs);
   const user = useSelector((state: RootState) => state.user);
+
+  console.log(logo);
   
   const links = [
     ...(user?.sts ? [{ _href: "/activity", _label: "Activity" }] : []),

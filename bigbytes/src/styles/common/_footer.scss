@@ -15,11 +15,16 @@ footer {
   }
 
   .logo_f {
-    @include dp_flex(row, center, center, 28px, 180px);
-    background: var(--prm_mid);
+    @include dp_flex(row, center, center, auto, max-content);
+    // @include dp_flex(row, center, center, 28px, 180px);
+    // background: var(--prm_mid);
     font-family: $fm_mnspc;
     color: var(--prm_light_fade_alt);
     margin: 10px;
+
+    img {
+      max-width: 50px;
+    }
   }
 
   .copyright {

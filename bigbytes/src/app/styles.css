@@ -62,11 +62,14 @@ header .logo_h {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 28px;
-  width: 180px;
-  background: var(--prm_mid);
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
   font-family: monospace;
   color: var(--prm_light_fade_alt);
+}
+header .logo_h img {
+  max-width: 50px;
 }
 header .nav_container {
   display: flex;
@@ -857,9 +860,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-ucoqtwz 2s 0s ease-in-out infinite;
+  animation: glow-ukbsi4b 2s 0s ease-in-out infinite;
 }
-@keyframes glow-ucoqtx8 {
+@keyframes glow-ukbsi5b {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -871,9 +874,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-ucoqtxj 1.5s 0s ease-in-out infinite;
+  animation: glow-ukbsi65 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-ucoqtye {
+@keyframes glow-ukbsi6r {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -1178,12 +1181,15 @@ footer .logo_f {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 28px;
-  width: 180px;
-  background: var(--prm_mid);
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
   font-family: monospace;
   color: var(--prm_light_fade_alt);
   margin: 10px;
+}
+footer .logo_f img {
+  max-width: 50px;
 }
 footer .copyright {
   font-family: "Lato", sans-serif;

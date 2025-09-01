@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ReduxProvider from "@/redux/provider";
-// import HeaderLogo from "@/images/HeaderLogo";
+// just for demo: add legit images
+import HeaderLogo from "../../src/images/HeaderLogo.png"
+import FooterLogo from "../../src/images/FooterLogo.png"
 // import FooterLogo from "@/images/FooterLogo";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
@@ -42,7 +44,7 @@ export default async function RootLayout({
               tw: [],
               cs: []
             }}
-            logo={`/* HeaderLogo */`}
+            logo={HeaderLogo?.src}
           />
           {children}
           <Footer 
@@ -52,7 +54,7 @@ export default async function RootLayout({
               cs: []
             }} 
             year={new Date().getFullYear().toString()}
-            logo={`/* FooterLogo */`}
+            logo={FooterLogo?.src}
           />
         </ReduxProvider>
       </body>
