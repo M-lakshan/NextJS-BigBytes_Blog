@@ -95,7 +95,9 @@
           border-bottom-right-radius: 0px;
           
           &.body_context {
-            @include box_shadow(0px, -150px, 50px, 5px, var(--prm_dark), true);
+            // @include box_shadow(0px, -150px, 50px, 5px, var(--prm_dark), true);
+            box-shadow: none;
+            background: var(--prm_dark);
             text-indent: 0%;
 
             h1,h2,h3,h4,h5 {

@@ -186,6 +186,7 @@ export function SinglePostAlt({ classList, postObj, format, layout, publisher_al
     </div>
     <div className="post_body">
       {(body) ? <MarkdownRenderer content={body} /> : <p className="context">{description}</p>}
+      {(coverImageUrl) && <img src={coverImageUrl} alt={coverImageAlt ? coverImageAlt : "post image"} />}
       <div className="comments">
         {(comments && comments?.length > 0) ? comments?.map((cmt,idx) => {
           const cmt_period = getPostPublishPeriod(cmt.timeStamp);

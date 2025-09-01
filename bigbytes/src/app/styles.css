@@ -599,8 +599,8 @@ main#browse .single_post .single_item .post_body .context {
   border-bottom-right-radius: 0px;
 }
 main#browse .single_post .single_item .post_body .context.body_context {
-  -ms-box-shadow: inset 0px -150px 50px 5px var(--prm_dark);
-  box-shadow: inset 0px -150px 50px 5px var(--prm_dark);
+  box-shadow: none;
+  background: var(--prm_dark);
   text-indent: 0%;
 }
 main#browse .single_post .single_item .post_body .context.body_context h1, main#browse .single_post .single_item .post_body .context.body_context h2, main#browse .single_post .single_item .post_body .context.body_context h3, main#browse .single_post .single_item .post_body .context.body_context h4, main#browse .single_post .single_item .post_body .context.body_context h5 {
@@ -857,9 +857,9 @@ main#home article.page section.hero h3 a, main#home article.page section.cta h3 
   transition: 300ms ease-out;
 }
 main#home article.page section.hero h3 a .icon:nth-child(even), main#home article.page section.cta h3 a .icon:nth-child(even) {
-  animation: glow-ucoqtwz 2s 0s ease-in-out infinite;
+  animation: glow-ukbsihv 2s 0s ease-in-out infinite;
 }
-@keyframes glow-ucoqtx8 {
+@keyframes glow-ukbsiij {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
@@ -871,9 +871,9 @@ main#home article.page section.hero h3 a .icon:nth-child(even), main#home articl
   }
 }
 main#home article.page section.hero h3 a .icon:nth-child(odd), main#home article.page section.cta h3 a .icon:nth-child(odd) {
-  animation: glow-ucoqtxj 1.5s 0s ease-in-out infinite;
+  animation: glow-ukbsiiq 1.5s 0s ease-in-out infinite;
 }
-@keyframes glow-ucoqtye {
+@keyframes glow-ukbsijl {
   0% {
     text-shadow: 0 0 5px var(--prm_mid), 0 0 10px var(--prm_mid), 0 0 20px var(--prm_mid);
   }
